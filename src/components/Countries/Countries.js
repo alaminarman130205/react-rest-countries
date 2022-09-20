@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Country from '../Country/Country';
+import './Countries.css'
 
 const Countries = () => {
     const [countries , setCountries] = useState([]);
@@ -10,11 +11,15 @@ const Countries = () => {
 
     },[])
     return (
-        <div>
+        <div className='countries-h1'>
             <h2>Countries Count : {countries.length}</h2>
-        {
-            countries.map(country => <Country country={country}></Country>)
-        }
+            <div className='countries-container'>
+                 {
+            countries.map(country => <Country country={country}
+            key={country.cca3}
+            ></Country>)
+                 }
+            </div>
         </div>
        
     );
